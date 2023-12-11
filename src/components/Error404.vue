@@ -1,10 +1,10 @@
 <template>
-  <h1>Post</h1>
+  <h1>Opss! Página não encontrada</h1>
 </template>
 
 <script>
 export default {
-  name: "PostPage"
+  name: 'Error404Page',
 }
 </script>
 
