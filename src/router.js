@@ -4,6 +4,7 @@ import Post from './components/Post.vue'
 import About from './components/About.vue'
 import Team from "@/components/Team"
 import Error404 from "@/components/Error404"
+import Company from "@/components/Company"
 
 const routes = [
     {
@@ -20,6 +21,11 @@ const routes = [
         path: '/sobre',
         name: 'about',
         component: About
+    },
+    {
+        path: '/a-empresa',
+        name: 'company',
+        component: Company,
     },
     {
         path: '/equipe/:member',

@@ -5,6 +5,9 @@
         <router-link :to="{ name: 'home' }">Home</router-link>
       </li>
       <li>
+        <router-link :to="{ name: 'company' }">Empresa</router-link>
+      </li>
+      <li>
         <router-link :to="{ name: 'team', params: { member: 'william' } }">Equipe</router-link>
       </li>
       <li>
