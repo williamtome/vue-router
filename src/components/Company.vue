@@ -8,6 +8,10 @@
   <router-link :to="{ name: 'company-history' }">
     História
   </router-link>
+  |
+  <router-link :to="{ name: 'company-awards' }">
+    Prêmios
+  </router-link>
 
   <router-view></router-view>
 </template>

@@ -6,6 +6,7 @@ import Team from './components/Team.vue'
 import Error404 from './components/Error404.vue'
 import Company from './components/Company.vue'
 import CompanyHistory from './components/CompanyHistory.vue'
+import CompanyAwards from './components/CompanyAwards.vue'
 
 const routes = [
     {
@@ -32,6 +33,11 @@ const routes = [
                 path: 'historia',
                 name: 'company-history',
                 component: CompanyHistory,
+            },
+            {
+                path: 'premios',
+                name: 'company-awards',
+                component: CompanyAwards,
             },
         ],
     },
