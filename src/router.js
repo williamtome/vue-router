@@ -2,9 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './components/Home.vue'
 import Post from './components/Post.vue'
 import About from './components/About.vue'
-import Team from "@/components/Team"
-import Error404 from "@/components/Error404"
-import Company from "@/components/Company"
+import Team from './components/Team.vue'
+import Error404 from './components/Error404.vue'
+import Company from './components/Company.vue'
+import CompanyHistory from './components/CompanyHistory.vue'
 
 const routes = [
     {
@@ -26,6 +27,13 @@ const routes = [
         path: '/a-empresa',
         name: 'company',
         component: Company,
+        children: [
+            {
+                path: 'historia',
+                name: 'company-history',
+                component: CompanyHistory,
+            },
+        ],
     },
     {
         path: '/equipe/:member',
