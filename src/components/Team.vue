@@ -1,6 +1,7 @@
 <template>
   <h1>Equipe</h1>
 
+  {{color}}
   <p v-if="member === 'william'">
     Bio William
   </p>
@@ -20,10 +21,15 @@
 <script>
 export default {
   name: 'TeamPage',
-  computed: {
-    member() {
-      return this.$route.params.member
-    }
+  props: {
+    color: {
+      type: String,
+      default: ''
+    },
+    member: {
+      type: String,
+      default: ''
+    },
   },
 }
 </script>

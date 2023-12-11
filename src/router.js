@@ -25,6 +25,7 @@ const routes = [
         path: '/equipe/:member',
         name:'team',
         component: Team,
+        props: route => ({ member: route.params.member, color: 'green' }),
     },
     {
         path: '/:pathMatch(.*)',
