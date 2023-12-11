@@ -2,13 +2,10 @@
   <header>
     <ul>
       <li>
-        <router-link to="/">Home</router-link>
+        <router-link :to="{ name: 'home' }">Home</router-link>
       </li>
       <li>
-        <router-link to="/post">Post</router-link>
-      </li>
-      <li>
-        <router-link to="/sobre">Sobre</router-link>
+        <router-link :to="{ name: 'about' }">Sobre</router-link>
       </li>
     </ul>
   </header>

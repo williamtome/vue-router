@@ -1,12 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from './components/HomePage.vue'
-import Post from './components/PostPage.vue'
-import About from './components/AboutPage.vue'
+import Home from './components/Home.vue'
+import Post from './components/Post.vue'
+import About from './components/About.vue'
+import Team from "@/components/Team"
+import Error404 from "@/components/Error404"
 
 const routes = [
-    { path: '/', component: Home },
-    { path: '/post', component: Post },
-    { path: '/sobre', component: About },
+    {
+        path: '/',
+        name: 'home',
+        component: Home
+    },
+    {
+        path: '/post/:id(\\d+)',
+        name: 'post',
+        component: Post,
+    },
+    {
+        path: '/sobre',
+        name: 'about',
+        component: About
+    },
+    {
+        path: '/equipe/:member',
+        name:'team',
+        component: Team,
+    },
+    {
+        path: '/:pathMatch(.*)',
+        component: Error404,
+    }
 ]
 
 const router = createRouter({
