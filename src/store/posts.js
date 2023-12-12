@@ -2,6 +2,7 @@ export default {
     namespaced: true,
     state: {
         posts: [],
+        post: {},
     },
     getters: {
         getPosts: state => state.posts,
@@ -13,7 +14,10 @@ export default {
         },
         addPost(state, payload) {
             state.posts.push(payload)
-        }
+        },
+        setCurrentPost(state, payload) {
+            state.post = payload
+        },
     },
     actions: {
         fetchPosts({ commit }) {
@@ -24,6 +28,11 @@ export default {
             ]
 
             commit('setPosts', posts)
+        },
+        fetchPostById({ commit, getters }, id) {
+            const post = getters.getPostById(id)
+
+            commit('setCurrentPost', post)
         },
         addPost({ commit }, post) {
             commit('addPost', post)
