@@ -41,13 +41,11 @@ const routes = [
                 component: CompanyAwards,
             },
         ],
-        beforeEnter(to, from, next) {
-            // console.log('to', to.fullPath)
-            // console.log('from', from.fullPath)
-            if (from.name !== 'post') {
-                next()
-            }
-        },
+        // beforeEnter(to, from, next) {
+        //     if (from.name !== 'post') {
+        //         next()
+        //     }
+        // },
     },
     {
         path: '/equipe/:member',
@@ -64,6 +62,18 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+})
+
+router.beforeEach((to, from, next) => {
+    // Esse guard será executado
+    // cada vez que uma rota for chamada.
+    console.log('beforeEach -> to', to)
+    console.log('beforeEach -> from', from)
+    next()
+})
+router.afterEach((to, from) => {
+    console.log('afterEach -> to', to)
+    console.log('afterEach -> from', from)
 })
 
 export default router

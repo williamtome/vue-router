@@ -26,7 +26,7 @@ export default {
       return this.$route.meta.sidebar
     },
   },
-  beforeRouteEnter(to, from, next) {
+  /*beforeRouteEnter(to, from, next) {
     console.log('===> beforeRouteEnter')
     console.log('to', to.fullPath)
     console.log('from', from.fullPath)
@@ -43,7 +43,7 @@ export default {
     console.log('to', to.name)
     console.log('from', from.name)
     next()
-  },
+  },*/
 }
 </script>
 
