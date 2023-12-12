@@ -22,7 +22,8 @@ const routes = [
     {
         path: '/sobre',
         name: 'about',
-        component: About
+        component: About,
+        meta: { auth: true },
     },
     {
         path: '/a-empresa',
@@ -52,6 +53,7 @@ const routes = [
         name:'team',
         component: Team,
         props: route => ({ member: route.params.member, color: 'green' }),
+        meta: { auth: true },
     },
     {
         path: '/:pathMatch(.*)',
@@ -64,16 +66,14 @@ const router = createRouter({
     routes,
 })
 
+const isLogged = true
+
 router.beforeEach((to, from, next) => {
-    // Esse guard será executado
-    // cada vez que uma rota for chamada.
-    console.log('beforeEach -> to', to)
-    console.log('beforeEach -> from', from)
-    next()
-})
-router.afterEach((to, from) => {
-    console.log('afterEach -> to', to)
-    console.log('afterEach -> from', from)
+    let n = null
+    if (to.meta.auth && !isLogged) {
+        n = { name: 'home' }
+    }
+    next(n)
 })
 
 export default router
