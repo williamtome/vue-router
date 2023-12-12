@@ -41,6 +41,13 @@ const routes = [
                 component: CompanyAwards,
             },
         ],
+        beforeEnter(to, from, next) {
+            // console.log('to', to.fullPath)
+            // console.log('from', from.fullPath)
+            if (from.name !== 'post') {
+                next()
+            }
+        },
     },
     {
         path: '/equipe/:member',

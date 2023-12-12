@@ -5,7 +5,6 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium amet architecto aspernatur aut cumque delectus distinctio, doloremque eum id, ipsa ipsum laudantium minus, nemo nesciunt quia reiciendis sapiente ut?
   </p>
 
-  {{sidebar}}
   <div :class="{ 'sidebar': sidebar }">
     <router-link :to="{ name: 'company-history' }">
       História
@@ -25,7 +24,25 @@ export default {
   computed: {
     sidebar() {
       return this.$route.meta.sidebar
-    }
+    },
+  },
+  beforeRouteEnter(to, from, next) {
+    console.log('===> beforeRouteEnter')
+    console.log('to', to.fullPath)
+    console.log('from', from.fullPath)
+    next()
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log('===> beforeRouteUpdate')
+    console.log('to', to)
+    console.log('from', from)
+    next()
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log('===> beforeRouteLeave')
+    console.log('to', to.name)
+    console.log('from', from.name)
+    next()
   },
 }
 </script>
