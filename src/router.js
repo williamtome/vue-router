@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from './components/Home.vue'
-import Post from './components/Post.vue'
-import About from './components/About.vue'
-import Team from './components/Team.vue'
-import Error404 from './components/Error404.vue'
-import Company from './components/Company.vue'
-import CompanyHistory from './components/CompanyHistory.vue'
-import CompanyAwards from './components/CompanyAwards.vue'
+const Home = () => import(/* webpackChunkName: "home" */ './components/Home.vue')
+const Post = () => import(/* webpackChunkName: "post" */ './components/Post.vue')
+const About = () => import(/* webpackChunkName: "about" */ './components/About.vue')
+const Team = () => import(/* webpackChunkName: "team" */ './components/Team.vue')
+const Error404 = () => import(/* webpackChunkName: "error-404" */ './components/Error404.vue')
+const Company = () => import(/* webpackChunkName: "company" */ './components/Company.vue')
+const CompanyHistory = () => import(/* webpackChunkName: "company-history" */ './components/CompanyHistory.vue')
+const CompanyAwards = () => import(/* webpackChunkName: "company-awards" */ './components/CompanyAwards.vue')
 
 const routes = [
     {
