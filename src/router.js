@@ -28,6 +28,7 @@ const routes = [
         path: '/a-empresa',
         name: 'company',
         component: Company,
+        meta: { sidebar: true },
         children: [
             {
                 path: 'historia',
