@@ -26,6 +26,17 @@ export default {
       return this.$route.meta.sidebar
     },
   },
+  watch: {
+    '$route'(newValue, oldValue) {
+      console.log(newValue, oldValue)
+      this.fetchData()
+    }
+  },
+  methods: {
+    fetchData() {
+      console.log('ajax fetch data')
+    },
+  },
   /*beforeRouteEnter(to, from, next) {
     console.log('===> beforeRouteEnter')
     console.log('to', to.fullPath)
