@@ -1,12 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
-const Home = () => import(/* webpackChunkName: "home" */ './components/Home.vue')
-const Post = () => import(/* webpackChunkName: "post" */ './components/Post.vue')
-const About = () => import(/* webpackChunkName: "about" */ './components/About.vue')
-const Team = () => import(/* webpackChunkName: "team" */ './components/Team.vue')
-const Error404 = () => import(/* webpackChunkName: "error-404" */ './components/Error404.vue')
-const Company = () => import(/* webpackChunkName: "company" */ './components/Company.vue')
-const CompanyHistory = () => import(/* webpackChunkName: "company-history" */ './components/CompanyHistory.vue')
-const CompanyAwards = () => import(/* webpackChunkName: "company-awards" */ './components/CompanyAwards.vue')
+const Home = () => import(/* webpackChunkName: "home" */ '../components/Home.vue')
+const Post = () => import(/* webpackChunkName: "post" */ '../components/Post.vue')
+const About = () => import(/* webpackChunkName: "about" */ '../components/About.vue')
+const Team = () => import(/* webpackChunkName: "team" */ '../components/Team.vue')
+const Error404 = () => import(/* webpackChunkName: "error-404" */ '../components/Error404.vue')
+const Company = () => import(/* webpackChunkName: "company" */ '../components/Company.vue')
+const CompanyHistory = () => import(/* webpackChunkName: "company-history" */ '../components/CompanyHistory.vue')
+const CompanyAwards = () => import(/* webpackChunkName: "company-awards" */ '../components/CompanyAwards.vue')
 
 const routes = [
     {
@@ -61,19 +60,4 @@ const routes = [
     }
 ]
 
-const router = createRouter({
-    history: createWebHistory(),
-    routes,
-})
-
-const isLogged = true
-
-router.beforeEach((to, from, next) => {
-    let n = null
-    if (to.meta.auth && !isLogged) {
-        n = { name: 'home' }
-    }
-    next(n)
-})
-
-export default router
+export default routes
